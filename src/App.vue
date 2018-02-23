@@ -1,8 +1,8 @@
 <template>
   <div class="main">
-    <app-header></app-header>
+    <app-header v-bind:title2="title2" v-on:changeTitle="updateTitle($event)"></app-header>
     <app-users v-bind:users="users,tester"></app-users>
-    <app-footer></app-footer>
+    <app-footer v-bind:title2="title2"></app-footer>
   </div>
 </template>
 
@@ -26,9 +26,15 @@ export default {
               {name: 'Kami', speciality: 'Webpack', show: false},
               {name: 'Yoshi', speciality: 'Data Diggin', show: false}
           ],
-      tester: 'test text'    
+      tester: 'test text',
+      title2: 'Vue prop title'    
     }
-  }
+  },
+  methods: {
+    updateTitle: function(updTitle) {
+      this.title2 = updTitle;
+    }
+    }
 }
 </script>
 

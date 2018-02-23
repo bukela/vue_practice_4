@@ -6,6 +6,7 @@
             <h6 v-show="user.show">{{ user.speciality }}</h6>
         </li>
     </ul>
+    <button v-on:click="deleteUser">Delete</button>
     <p>{{ tester }}</p>
  </div>
 </template>
@@ -24,6 +25,11 @@ export default {
     //           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
     //       ],
     }
+  },
+  methods: {
+      deleteUser: function() {
+          this.users.pop();
+      }
   }
 }
 </script>
