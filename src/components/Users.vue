@@ -6,22 +6,23 @@
             <h6 v-show="user.show">{{ user.speciality }}</h6>
         </li>
     </ul>
+    <p>{{ tester }}</p>
  </div>
 </template>
 
 <script>
 export default {
-
+    props: ['users','tester'],
   data () {
     return {
-      users: [
-              {name: 'Ryu', speciality: 'Vue Components', show: false},
-              {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-              {name: 'Hitoshi', speciality: 'Click Events', show: false},
-              {name: 'Tango', speciality: 'Conditionals', show: false},
-              {name: 'Kami', speciality: 'Webpack', show: false},
-              {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-          ],
+    //   users: [
+    //           {name: 'Ryu', speciality: 'Vue Components', show: false},
+    //           {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
+    //           {name: 'Hitoshi', speciality: 'Click Events', show: false},
+    //           {name: 'Tango', speciality: 'Conditionals', show: false},
+    //           {name: 'Kami', speciality: 'Webpack', show: false},
+    //           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
+    //       ],
     }
   }
 }
@@ -31,7 +32,7 @@ export default {
     users {
         background: #222;
     }
-    h1,p {
+    h1 {
         color: lightgreen;
         text-align: center;
     }
