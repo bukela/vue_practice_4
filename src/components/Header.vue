@@ -7,6 +7,9 @@
 </template>
 
 <script>
+
+import {bus} from '../main';
+
 export default {
     props: ['title2'],
   data () {
@@ -17,7 +20,9 @@ export default {
   methods: {
       changeTitle: function() {
         //   this.title2 = 'Title 2 changed'; //menja samo na jednom mestu title2
-        this.$emit('changeTitle','Title 2 changed');
+        // this.$emit('changeTitle','Title 2 changed');
+        this.title2 = 'Title with event bus';
+        bus.$emit('titleChanged', 'Title with event bus');
       }
    }
 }

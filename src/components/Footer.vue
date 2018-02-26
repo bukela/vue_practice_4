@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import {bus} from '../main';
+
 export default {
     props: ['title2'],
   data () {
@@ -14,8 +16,13 @@ export default {
       title: 'Vue footer component',
       copy: 'Copyright'
     }
+  },
+  created () {
+      bus.$on('titleChanged',(data) => {
+          this.title2 = data;
+      })
   }
-}
+ }
 </script>
 
 <style scoped>
